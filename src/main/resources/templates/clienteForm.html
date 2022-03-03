@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Cliente</title>
+</head>
+<body>
+    <div>
+        <h1>Adicionar Cliente</h1>
+        <form action="/cadastrar/cliente" method="POST" style="display: flex; flex-direction: column;">
+            <label for="nome">
+                Nome:
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+            </label>
+            <br>
+            <label for="email">
+                E-mail:
+                <input type="text" name="email" id="email" placeholder="E-mail">
+            </label>
+            <br>
+            <label for="conta">
+                Conta:
+                <input type="text" name="conta" id="conta" placeholder="Conta">
+            </label>
+            <br>
+            <label for="agencia">
+                Agência:
+                <input type="text" name="agencia" id="agencia" placeholder="Agência">
+            </label>
+            <br>
+            <button type="submit" style="width: 100px">Adicionar</button>
+        </form>
+    </div>
+</body>
+</html>
