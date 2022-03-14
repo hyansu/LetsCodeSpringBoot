@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.UUID;
@@ -29,7 +30,7 @@ public class ClienteController {
     }
 
     @PostMapping
-    public ResponseEntity<ResponseCliente> cadastrarCliente(@RequestBody RequestCliente requestCliente, UriComponentsBuilder uriComponentsBuilder){
+    public ResponseEntity<ResponseCliente> cadastrarCliente(@RequestBody @Valid RequestCliente requestCliente, UriComponentsBuilder uriComponentsBuilder){
         Cliente cliente = clienteService.cadastrarCliente(requestCliente);
         URI uri = uriComponentsBuilder.path("cliente/{id}").buildAndExpand(cliente.getId()).toUri();
        return ResponseEntity.created(uri).body(new ResponseCliente(cliente));

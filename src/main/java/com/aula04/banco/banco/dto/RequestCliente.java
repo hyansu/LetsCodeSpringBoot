@@ -18,9 +18,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class RequestCliente {
 
-    @NotNull(message = "Não pode ser null")
-    @NotEmpty(message = "Não pode ser vazio")
-    @Length(min = 2)
+    @NotNull(message = "Não pode ser null") @NotEmpty(message = "Não pode ser vazio") @Length(min = 2)
     private String nome;
     private String email;
     private String senha;
